@@ -1,0 +1,184 @@
+xrun(64): 24.09-s005: (c) Copyright 1995-2025 Cadence Design Systems, Inc.
+TOOL:	xrun(64)	24.09-s005: Started on May 26, 2025 at 19:03:31 +07
+xrun
+	-access +rwc
+	-f ./flist
+		-sv
+		-timescale 1ns/1ps
+		./../00_src/adder_1.sv
+		./../00_src/adder_4.sv
+		./../00_src/adder_32.sv
+		./../00_src/alu.sv
+		./../00_src/brc.sv
+		./../00_src/compare_32_u.sv
+		./../00_src/compare_32.sv
+		./../00_src/control_unit.sv
+		./../00_src/imm_gen.sv
+		./../00_src/instr_mem.sv
+		./../00_src/lsu.sv
+		./../00_src/memory.sv
+		./../00_src/PC.sv
+		./../00_src/pipelined.sv
+		./../00_src/regfile.sv
+		./../00_src/sll.sv
+		./../00_src/slt.sv
+		./../00_src/sltu.sv
+		./../00_src/sra.sv
+		./../00_src/srl.sv
+		./../00_src/EX.sv
+		./../00_src/ID.sv
+		./../00_src/IF.sv
+		./../00_src/MEM.sv
+		./../00_src/WB.sv
+		./../00_src/IF_stall.sv
+		./../00_src/IF_ID.sv
+		./../00_src/ID_EX.sv
+		./../00_src/EX_MEM.sv
+		./../00_src/MEM_WB.sv
+		./../00_src/forwarding.sv
+		./../00_src/hazard_detection.sv
+		./../01_bench/tlib.svh
+		./../01_bench/driver.sv
+		./../01_bench/scoreboard.sv
+		./../01_bench/tbench.sv
+		+xmtop+tbench
+	-svseed 1
+Recompiling... reason: file '../00_src/memory.sv' is newer than expected.
+	expected: Mon May 26 18:21:44 2025
+	actual:   Mon May 26 19:02:50 2025
+file: ./../00_src/memory.sv
+	module worklib.memory:sv
+		errors: 0, warnings: 0
+file: ./../01_bench/scoreboard.sv
+	module worklib.scoreboard:sv
+		errors: 0, warnings: 0
+	Elaborating the design hierarchy:
+		Caching library 'worklib' ....... Done
+control_unit CU_module(
+                     |
+xmelab: *W,CUVWSI (../00_src/ID.sv,44|21): 2 input ports were not connected:
+xmelab: (../00_src/control_unit.sv,3): br_equal
+xmelab: (../00_src/control_unit.sv,3): br_less
+
+  adder_32 add1 (
+              |
+xmelab: *W,CUVWSP (../00_src/alu.sv,37|14): 1 output port was not connected:
+xmelab: (../00_src/adder_32.sv,6): Cout
+
+  adder_32 sub1 (
+              |
+xmelab: *W,CUVWSP (../00_src/alu.sv,44|14): 1 output port was not connected:
+xmelab: (../00_src/adder_32.sv,6): Cout
+
+  compare_32 comp_inst (
+                     |
+xmelab: *W,CUVWSP (../00_src/slt.sv,12|21): 1 output port was not connected:
+xmelab: (../00_src/compare_32.sv,5): eq
+
+  adder_32 adder1 (
+                |
+xmelab: *W,CUVWSP (../00_src/compare_32.sv,24|16): 1 output port was not connected:
+xmelab: (../00_src/adder_32.sv,6): Cout
+
+  adder_32 adder2 (
+                |
+xmelab: *W,CUVWSP (../00_src/compare_32.sv,30|16): 1 output port was not connected:
+xmelab: (../00_src/adder_32.sv,6): Cout
+
+  compare_32_u comp_inst (
+                       |
+xmelab: *W,CUVWSP (../00_src/sltu.sv,12|23): 1 output port was not connected:
+xmelab: (../00_src/compare_32_u.sv,3): eq
+
+	Top level design units:
+		$unit_0x534c543e
+		tbench
+      0,
+      |
+xmelab: *W,CUVMPW (../00_src/alu.sv,40|6): port sizes differ in port connection(32/1) for the instance(tbench.dut.EX_module.alu_module) .
+      1,
+      |
+xmelab: *W,CUVMPW (../00_src/alu.sv,47|6): port sizes differ in port connection(32/1) for the instance(tbench.dut.EX_module.alu_module) .
+	Building instance overlay tables: .................... Done
+	Generating native compiled code:
+		worklib.scoreboard:sv <0x7fb8bf9c>
+			streams:   4, words:  6501
+		worklib.memory:sv <0x7c3aaf4e>
+			streams:  18, words: 29735
+	Building instance specific data structures.
+	Loading native compiled code:     .................... Done
+	Design hierarchy summary:
+		                   Instances  Unique
+		Modules:                 391      41
+		Registers:             1,566     379
+		Scalar wires:          2,288       -
+		Expanded wires:          352      39
+		Vectored wires:          459       -
+		Always blocks:            25      24
+		Initial blocks:            7       7
+		Cont. assignments:       482      83
+		Pseudo assignments:    1,110       -
+		Compilation units:         1       1
+		Process Clocks:            9       2
+		Simulation timescale:    1ps
+	Writing initial simulation snapshot: worklib.tbench:sv
+Loading snapshot worklib.tbench:sv .................... Done
+SVSEED set from command line: 1
+*Verdi* Loading libsscore_xcelium.so
+*Verdi* : FSDB parallel Dumping is disabled because only one CPU is available.
+xcelium> source /tools/eda/cadence/XCELIUM2409/tools/xcelium/files/xmsimrc
+xcelium> run
+
+PIPELINE - ISA tests
+
+ add......PASS
+addi.....PASS
+sub......PASS
+and......PASS
+andi.....PASS
+or.......PASS
+ori......PASS
+xor......PASS
+xori.....PASS
+slt......PASS
+slti.....PASS
+sltu.....PASS
+sltiu....PASS
+sll......PASS
+slli.....PASS
+srl......PASS
+srli.....PASS
+sra......PASS
+srai.....PASS
+lw.......PASS
+lh.......PASS
+lhu......PASS
+lb.......PASS
+lbu......PASS
+sw.......PASS
+sh.......PASS
+sb.......PASS
+auipc....PASS
+lui......PASS
+beq......PASS
+bne......PASS
+blt......PASS
+bltu.....PASS
+bge......PASS
+bgeu.....PASS
+jal......PASS
+jalr.....PASS
+malgn....ERROR
+iosw.....PASS
+Result
+
+IPC = 0.60
+IPC          =  0.60
+Mispred Rate = 126.52 
+
+END of ISA tests
+
+Simulation complete via $finish(1) at time 162540 NS + 1
+../01_bench/scoreboard.sv:63       $finish;
+xcelium> exit
+TOOL:	xrun(64)	24.09-s005: Exiting on May 26, 2025 at 19:03:35 +07  (total: 00:00:04)

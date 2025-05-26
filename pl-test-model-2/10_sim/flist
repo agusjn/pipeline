@@ -1,0 +1,11 @@
+-I./../00_src/
+
+# insert your files here as: ./../00_src/<filename>.sv
+# delete these two lines starting with #
+
+./../01_bench/tlib.svh
+./../01_bench/driver.sv
+./../01_bench/scoreboard.sv
+./../01_bench/tbench.sv
+./conf.vlt
+-top tbench

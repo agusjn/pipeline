@@ -1,0 +1,8 @@
+#e1(26May2025:18:36:04): source ./xcelium.d/env.d/env.history.26May2025_18_36_04
+s1(26May2025:18:36:04):  xrun -access +rwc -f ./flist -svseed 1 
+#e2(26May2025:18:36:45): source ./xcelium.d/env.d/env.history.26May2025_18_36_45
+s2(26May2025:18:36:45):  xrun -access +rwc -f ./flist -svseed 1 
+#e3(26May2025:18:38:41): source ./xcelium.d/env.d/env.history.26May2025_18_38_41
+s3(26May2025:18:38:41):  xrun -access +rwc -f ./flist -svseed 1 
+#e4(26May2025:19:03:31): source ./xcelium.d/env.d/env.history.26May2025_19_03_31
+s4(26May2025:19:03:31):  xrun -access +rwc -f ./flist -svseed 1 
